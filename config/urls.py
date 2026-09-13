@@ -7,7 +7,10 @@ from drf_spectacular.views import (
 )
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 
+from config.views import HomeView
+
 urlpatterns = [
+    path("", HomeView.as_view(), name="home"),
     path("admin/", admin.site.urls),
     # Autenticación JWT
     path("api/token/", TokenObtainPairView.as_view(), name="token_obtain_pair"),
