@@ -1,11 +1,11 @@
 """
-Smoke test del Caso 5 contra la base de datos configurada (Neon).
+Smoke test contra la base de datos configurada (Neon).
 
 Ejecutar:
-    python manage.py shell < scripts/smoke_caso5.py
+    python manage.py shell < scripts/smoke_test.py
 o bien:
     $env:DJANGO_SETTINGS_MODULE="config.settings"
-    python scripts/smoke_caso5.py
+    python scripts/smoke_test.py
 
 Verifica:
   - Flujo completo: albergue -> animal -> ingreso -> traslados -> atenciones

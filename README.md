@@ -1,4 +1,4 @@
-# API REST - Albergue de Animales (BootCamp Python · Caso 5)
+# API REST - Albergue de Animales
 
 Proyecto **Django + Django REST Framework** para registrar el ciclo completo de un animal en un
 albergue: **ingreso → ubicación temporal (traslados) → atención veterinaria → solicitudes de
@@ -35,7 +35,7 @@ registrado en el historial completo.
 ├── adopciones/            # Adoptante, SolicitudAdopcion, Adopcion, SeguimientoAdopcion
 ├── templates/             # welcome.html (portada con acceso a Swagger)
 ├── images/                # DIAGRAMA.png (modelo de base de datos)
-├── scripts/smoke_caso5.py # smoke test (Caso 5 + validaciones)
+├── scripts/smoke_test.py  # smoke test (flujo completo + validaciones)
 ├── manage.py
 ├── requirements.txt
 ├── build.sh               # build para Render
@@ -124,10 +124,10 @@ Abrir `http://127.0.0.1:8000/` para la portada o `http://127.0.0.1:8000/api/docs
 
 Sin `DATABASE_URL` en `.env` el proyecto usa SQLite automáticamente (no apto para producción).
 
-### Smoke test (Caso 5)
+### Smoke test
 
 ```powershell
-Get-Content scripts\smoke_caso5.py -Raw | python manage.py shell
+Get-Content scripts\smoke_test.py -Raw | python manage.py shell
 ```
 
 Valida el flujo completo, las validaciones y la protección del historial (`PROTECT`).
@@ -172,7 +172,7 @@ Configuración en producción: `DEBUG=False`, `SECRET_KEY` por variable de entor
 > `DATABASE_URL`) viven solo en las variables de entorno de Render y en el `.env` local.
 > **Nunca se suben al repositorio.**
 
-## 9. Decisiones de diseño (Caso 5)
+## 9. Decisiones de diseño
 
 - **Nombres de tablas (PostgreSQL)**: `albergues`, `animales`, `ingresos`,
   `ubicaciones_temporales`, `atenciones_veterinarias`, `adoptantes`,
